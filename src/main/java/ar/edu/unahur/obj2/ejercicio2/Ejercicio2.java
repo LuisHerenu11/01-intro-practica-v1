@@ -1,8 +1,5 @@
 package ar.edu.unahur.obj2.ejercicio2;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.*;
 
 public class Ejercicio2 {
     public static void main(String [] args) {
@@ -27,5 +24,22 @@ public class Ejercicio2 {
         {
             System.out.println("los numeros de la lista son: "+ListaDeNumeros);
         }
+
+        List listaDeNumerosMayores = new ArrayList();
+        /*
+        Iterator iter = ListaDeNumeros.iterator();
+        while (iter.hasNext()){
+            if(iter. >= num){
+                listaDeNumerosMayores.add(iter.next());
+            }
+        }
+        */
+        List<Integer> unaLista = ListaDeNumeros;
+        for (Integer unNumero : unaLista) {
+            if (unNumero >= num) {
+                listaDeNumerosMayores.add(unNumero);
+            }
+        }
+        System.out.println("los numeros mayores a " +num+ " son : "+listaDeNumerosMayores);
     }
 }

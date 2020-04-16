@@ -18,7 +18,7 @@ public class Ejercicio1_3 {
         for(int j=0; j <arregloTamanio; j++){
             System.out.print(array[j]+"\n ");
         }
-        double min,max,promedio;
+        double min,max;
 
         max = min = array[0];
         for(int l=0; l< arregloTamanio;l++){
@@ -31,9 +31,15 @@ public class Ejercicio1_3 {
                 min = array[l];
             }
         }
+        double suma = 0.0;
+        for(int h=0; h< arregloTamanio;h++){
+            suma += array[h];
+        }
+        double promedio = 0.0;
+        promedio = suma / arregloTamanio;
         System.out.print("La minima registrada es de: " +min);
         System.out.print("\nLa maxima registrada es de: "+max);
-
+        System.out.print("\nEl promedio es de: " +promedio);
         // AGREGAR metodo MINIMA , MAXIMA, MEDIA.
     }
 }

@@ -6,6 +6,7 @@ public class Ejercicio1_3 {
     public static void main(String[] args) {
         Scanner lector = new Scanner(System.in);
         int i;
+
         double arregloTamanio;
         double array[] = new double[24];
         System.out.print("Ingrese el tamaño del array: ");
@@ -14,9 +15,11 @@ public class Ejercicio1_3 {
             System.out.print("X["+(i + 1)+"]= ");
             array[i]=lector.nextDouble();
         }
-        System.out.println("Array normal");
+        System.out.println("Registro por hora");
+
         for(int j=0; j <arregloTamanio; j++){
-            System.out.print(array[j]+"\n ");
+            String a = graficador(array[j]);
+            System.out.print(a+" "+array[j]+"\n ");
         }
         double min,max;
 
@@ -41,5 +44,15 @@ public class Ejercicio1_3 {
         System.out.print("\nLa maxima registrada es de: "+max);
         System.out.print("\nEl promedio es de: " +promedio);
         // AGREGAR metodo MINIMA , MAXIMA, MEDIA.
+    }
+
+    public static String graficador(double algo) {
+
+        String asterizcos = " ";
+
+        for (int p = 0; p < algo; p++){
+            asterizcos += "*";
+        }
+        return asterizcos;
     }
 }

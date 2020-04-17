@@ -23,10 +23,25 @@ public class Ejercicio1_4 {
             ListaDePersonas.add(i,unaPersona);
         }
 
-        System.out.print("Los alumnos son: ");
+        System.out.print("Los alumnos son: \n");
 
         for(int j=0; j <ListaDePersonas.size(); j++){
             System.out.println(j+" "+ ListaDePersonas.get(j).getNombre()+" "+ListaDePersonas.get(j).getApellido()+"\n ");
+        }
+
+        char unaLetra;
+        ArrayList<Persona> PersonasQueEmpiezanConEsaLetra = new ArrayList();
+
+        System.out.print("Ingrese una letra: ");
+        unaLetra = lector.next().charAt(0);
+
+        for (int k=0;k<ListaDePersonas.size();k++){
+            if(ListaDePersonas.get(k).getNombre().charAt(0) == unaLetra){
+                PersonasQueEmpiezanConEsaLetra.add(ListaDePersonas.get(k));
+            }
+        }
+        for(int l=0; l <PersonasQueEmpiezanConEsaLetra.size(); l++){
+            System.out.println(l+" "+ PersonasQueEmpiezanConEsaLetra.get(l).getNombre()+" "+ PersonasQueEmpiezanConEsaLetra.get(l).getApellido()+"\n ");
         }
     }
 

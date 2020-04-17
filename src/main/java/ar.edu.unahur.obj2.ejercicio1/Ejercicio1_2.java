@@ -1,7 +1,7 @@
-package ar.edu.unahur.obj2.ejercicio2;
+package ar.edu.unahur.obj2.ejercicio1;
 import java.util.*;
 
-public class Ejercicio2 {
+public class Ejercicio1_2 {
     public static void main(String [] args) {
         int num;
 

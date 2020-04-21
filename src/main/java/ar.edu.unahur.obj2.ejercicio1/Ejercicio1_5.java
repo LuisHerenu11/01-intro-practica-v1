@@ -48,14 +48,16 @@ public class Ejercicio1_5 {
             int[] cantidades = new int[27];
             int punteroLetras = 0;
 
-            String letras = "abcdefghijklmnñopqrstuvwxyz ";
+            String letras = "abcdefghijklmnñopqrstuvwxyz 1234567890";
 
-            for (int i = 0; i < unTexto.length(); i++) {
+            for (int i = 0; i < letras.length(); i++) {
                 for(int j=0; j < unTexto.length(); j++) {
-                    if (unTexto.charAt(i) == unTexto.charAt(j)) {
+                    if (letras.charAt(i) == unTexto.charAt(j))
+                    {
                         contador++;
                     }
                 }
+
                 if (contador > 0) {
                     letrasEncontradas[punteroLetras] = letras.charAt(i);
                     cantidades[punteroLetras] = contador;

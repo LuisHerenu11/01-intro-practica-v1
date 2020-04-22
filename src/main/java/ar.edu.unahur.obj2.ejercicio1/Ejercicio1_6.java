@@ -38,6 +38,8 @@ public class Ejercicio1_6 {
             System.out.format(x);
         }
 */
+
+//        System.out.format("%c %d %s", Character.valueOf('a'), Integer.valueOf(10), "string");
     }
 
 }

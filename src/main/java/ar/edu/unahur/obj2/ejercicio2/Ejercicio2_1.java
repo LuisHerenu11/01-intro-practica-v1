@@ -19,7 +19,7 @@ public class Ejercicio2_1 {
 
         System.out.print("Agregar empleados a la lista: \n");
 
-        for (int i=0; i<2;i++){
+        for (int i=0; i<20;i++){
             System.out.print("Igrese 1 para cargar un Administrativo o 2 para un Vendedor\n");
 
             tipo = lector.nextInt();

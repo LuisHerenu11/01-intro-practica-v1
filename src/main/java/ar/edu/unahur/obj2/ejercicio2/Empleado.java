@@ -1,11 +1,11 @@
 package ar.edu.unahur.obj2.ejercicio2;
 
 public abstract class Empleado {
-    private int dni;
-    private String nombre;
-    private String apellido;
-    private String email;
-    private int sueldoBase;
+    protected int dni;
+    protected String nombre;
+    protected String apellido;
+    protected String email;
+    protected int sueldoBase;
 
     public Empleado(int dni, String nombre, String apellido, String email, int sueldoBase) {
         this.dni = dni;

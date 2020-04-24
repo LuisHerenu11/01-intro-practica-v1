@@ -13,10 +13,9 @@ public class Ejercicio2_1 {
         String nombre,apellido,email;
         int dni,sueldoBase,tipo;
         Empleado unEmpleado;
-
         Scanner lector = new Scanner(System.in);
 
-        System.out.print("Agregar empleados a la lista: ");
+        System.out.print("Agregar empleados a la lista: \n");
 
         for (int i=0; i<20;i++){
             System.out.print("Igrese 1 para cargar un Administrativo o 2 para un Vendedor\n");
@@ -26,11 +25,11 @@ public class Ejercicio2_1 {
             System.out.print("Ingrese dni: \n");
             dni = lector.nextInt();
             System.out.print("Ingrese nombre: \n");
-            nombre = lector.nextLine();
+            nombre = lector.next();
             System.out.print("Ingrese apellido: \n");
-            apellido = lector.nextLine();
+            apellido = lector.next();
             System.out.print("Ingrese email: \n");
-            email = lector.nextLine();
+            email = lector.next();
             System.out.print("Ingrese sueldo base: \n");
             sueldoBase = lector.nextInt();
 
@@ -53,6 +52,10 @@ public class Ejercicio2_1 {
             }
         }
 
+        for(Empleado Empleado : empleadoList)
+        {
+            System.out.println(Empleado);
+        }
     }
 
 }

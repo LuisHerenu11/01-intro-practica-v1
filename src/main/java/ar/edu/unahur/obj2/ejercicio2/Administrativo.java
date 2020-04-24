@@ -1,6 +1,10 @@
 package ar.edu.unahur.obj2.ejercicio2;
 
 public class Administrativo extends Empleado {
+
+    private int hsExtra;
+    private int hsMes;
+
     public int getHsExtra() {
         return hsExtra;
     }
@@ -17,8 +21,7 @@ public class Administrativo extends Empleado {
         this.hsMes = hsMes;
     }
 
-    private int hsExtra;
-    private int hsMes;
+
 
     public Administrativo(int dni, String nombre, String apellido, String email, int sueldoBase,int hsExtra, int hsMes) {
         super(dni,nombre,apellido,email,sueldoBase);

@@ -29,6 +29,6 @@ public class Vendedor extends Empleado {
 
     @Override
     public double getSueldo(){
-        return (this.getSueldoBase() + (this.getPorcenComision() * this.getTotalVentas() / 100);
+        return (this.getSueldoBase() + (this.getPorcenComision() * this.getTotalVentas() / 100));
     }
 }

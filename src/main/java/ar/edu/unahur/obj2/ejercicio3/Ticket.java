@@ -29,4 +29,12 @@ public class Ticket {
             System.out.format("%s %s %d %.4f %s", linea.getNombre(),"x ", linea.getCantidad(), linea.precioTotal(), "|\n");
         }
     }
+
+    public void imprimirTotalDeCompra(){
+        double total = 0;
+        for(LineaTicket linea: lineasList){
+            total = total + linea.precioTotal();
+        }
+        System.out.format("%s %.4f %s","Total: ",total,"\n");
+    }
 }

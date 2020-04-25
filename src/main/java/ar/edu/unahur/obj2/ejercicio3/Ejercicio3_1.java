@@ -42,6 +42,7 @@ public class Ejercicio3_1 {
         }
 
         nuevoTicket.imprimirLinea();
+        nuevoTicket.imprimirTotalDeCompra();
         System.out.print("Gracias por su compra\n");
     }
 }

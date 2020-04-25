@@ -13,11 +13,20 @@ public class Ejercicio3_1 {
         while(decisión == 1){
             if(decisión == 1){
                 System.out.print("ingrese nombre del producto: \n");
-                String nombre = lector.next();
+                String nombre = lector.next().toUpperCase();
                 System.out.print("ingrese el precio por unidad: \n");
                 double precioUnidad = lector.nextDouble();
                 System.out.print("Ingrese la cantidad: \n");
                 int cantidad = lector.nextInt();
+
+                /*
+                    String linea = lector.nextLine();
+                    String[] valores = linea.split(" ");
+                    String nombre = valores[0];
+                    Float precio = Float.valueOf(valores[1]);
+                    Integer cantidad = Integer.valueOf(valores[2]);
+                 */
+                //textoIngresado.split(" "); // el separador es el espaciado.
 
                 Producto nuevoProducto = new Producto(nombre,precioUnidad,cantidad);
                 LineaTicket nuevaLinea = new LineaTicket(nuevoProducto);

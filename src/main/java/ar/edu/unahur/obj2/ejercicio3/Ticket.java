@@ -18,9 +18,15 @@ public class Ticket {
         }
     }
 */
+    /*public void imprimirLinea2(){
+        for(LineaTicket linea: lineasList){
+            System.out.format("%s %.3f %d %s", linea.getNombre(), linea.getPrecioUnidad(), linea.getCantidad(), "|\n");
+        }
+    }*/
+
     public void imprimirLinea(){
         for(LineaTicket linea: lineasList){
-            System.out.format("%s %.4f %d %s", linea.getNombre(), linea.getPrecioUnidad(), linea.getCantidad(), "|\n");
+            System.out.format("%s %s %d %.4f %s", linea.getNombre(),"x ", linea.getCantidad(), linea.precioTotal(), "|\n");
         }
     }
 }

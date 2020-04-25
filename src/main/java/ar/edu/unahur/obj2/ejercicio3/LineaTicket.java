@@ -7,6 +7,10 @@ public class LineaTicket {
 
     Producto producto;
 
+    public double precioTotal(){
+        return (this.getPrecioUnidad() * this.getCantidad());
+    }
+
     public LineaTicket(Producto unProducto) {
         this.producto = unProducto;
     }

@@ -1,8 +1,15 @@
 package ar.edu.unahur.obj2.ejercicio3;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Empresa {
-    private String nombre;
-    private String anioFundacion;
+
+
+    public String nombre;
+    public String anioFundacion;
+
+    List<Empleados> empleadosList = new ArrayList();
 
     public Empresa(String nombre, String anioFundacion) {
         this.setNombre(nombre);
@@ -24,4 +31,10 @@ public class Empresa {
     public void setAnioFundacion(String anioFundacion) {
         this.anioFundacion = anioFundacion;
     }
+
+    public void anotarEmpleadoEnLista(Empleados unEmpleado){
+        empleadosList.add(unEmpleado);
+    }
 }
+
+// AÑADIR UN METHOD QUE IMPRIMA CADA EMPLEADO DE LA LISTA.

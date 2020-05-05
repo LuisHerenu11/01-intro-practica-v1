@@ -18,11 +18,18 @@ public class RegistroEmpresas {
         }
     }
 
-    public void buscarEmpresa(String nombre, Empleados unEmpleado){
-        for(Empresa empresa: empresasList){
-            if(nombre == empresa.getNombre()){
-                empresa.anotarEmpleadoEnLista(unEmpleado);
-            }
+    public void mostrarRegistroDetallado(int posicionEnIndice){
+        System.out.printf("%d %s %s",posicionEnIndice,"NOMBRE: "+empresasList.get(posicionEnIndice).getNombre(),"|AÑO FUNDACION: "+empresasList.get(posicionEnIndice).getAnioFundacion()+"\n");
+        System.out.print("Los empleados en la empresa son: \n");
+        //int numerador = 0;
+        for(int i=0; i < empresasList.get(posicionEnIndice).empleadosList.size(); i++){
+            //System.out.printf("%d %s %s %s %s %s",numerador,"NOMBRE: "+empleado.getNombre(),"|APELLIDO: "+empleado.getApellido(),"|NACIMIENTO:"+empleado.getFechaNacimiento(),"|CONTRATO:"+empleado.getFechaContrato()+"\n");
+            System.out.print("|NOMBRE: "+empresasList.get(posicionEnIndice).empleadosList.get(i).getNombre()+"|APELLIDO: "+empresasList.get(posicionEnIndice).empleadosList.get(i).getApellido()+"|NACIMIENTO: "+empresasList.get(posicionEnIndice).empleadosList.get(i).getFechaNacimiento()+"|CONTRATO: "+empresasList.get(posicionEnIndice).empleadosList.get(i).getFechaContrato()+"|\n");
+            //numerador++;
         }
+    }
+
+    public void buscarEmpresa(int indice, Empleados unEmpleado){
+        empresasList.get(indice).anotarEmpleadoEnLista(unEmpleado);
     }
 }

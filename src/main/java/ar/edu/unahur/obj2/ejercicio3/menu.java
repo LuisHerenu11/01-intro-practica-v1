@@ -19,11 +19,12 @@ public class menu {
         String anioFundacion;
 
         Scanner lector = new Scanner(System.in);
+        lector.useDelimiter("\n");
         RegistroEmpresas registro = new RegistroEmpresas();
         System.out.print("decisión: ");
         decisión = lector.nextInt();
 
-        while(decisión != 5){
+        while(decisión != 6){
             if(decisión == 1){
                 System.out.print("Ingrese nombre de la empresa: \n");
                 nombre = lector.next().toUpperCase();
@@ -41,8 +42,8 @@ public class menu {
 
             }else if(decisión ==2){
                 registro.mostrarRegistro();
-                System.out.print("escriba el nombre de la empresa a la cual quiere añadir un empleado: \n");
-                String nombreDeEmpresa = lector.nextLine().toUpperCase();
+                System.out.print("escriba el numero del indice de la empresa a la cual quiere añadir un empleado: \n");
+                int posIndice = lector.nextInt();
                 lector.nextLine();
                 System.out.print("escriba el nombre del empleado: \n");
                 String nombreDeEmpleado = lector.next();
@@ -50,7 +51,7 @@ public class menu {
                 System.out.print("escriba el apellido del empleado: \n");
                 String apellido = lector.next();
                 lector.nextLine();
-                System.out.print("escriba la fecha de nacimiento del empleado: \n");
+                System.out.print("escriba la fecha de nacimiento del empleado (acepta espacios): \n");
                 String fechaNacimiento = lector.next();
                 lector.nextLine();
                 System.out.print("escriba la fecha de contrato del empleado: \n");
@@ -58,7 +59,7 @@ public class menu {
                 lector.nextLine();
 
                 Empleados unEmpleado = new Empleado(nombreDeEmpleado,apellido,fechaNacimiento,fechaContrato);
-                registro.buscarEmpresa(nombreDeEmpresa, unEmpleado);
+                registro.buscarEmpresa(posIndice, unEmpleado);
                 System.out.print("se a registrado con exito\n");
                 System.out.print("Eliga que quiere hacer ahora: \n");
                 menu.desplegar();
@@ -72,12 +73,20 @@ public class menu {
                 decisión = lector.nextInt();
             }else if(decisión == 4){
                 registro.mostrarRegistro();
-
+                System.out.print("Por favor ingrese el numero del indice de la empresa para ver su información detallada: \n");
+                int posicionEnIndice = lector.nextInt();
+                registro.mostrarRegistroDetallado(posicionEnIndice);
                 menu.desplegar();
                 System.out.print("Eliga que quiere hacer ahora: \n");
 
                 decisión = lector.nextInt();
+            }else if(decisión == 5){
+                menu.finalizar();
             }
         }
+    }
+
+    public static void finalizar(){
+        System.exit(0);
     }
 }

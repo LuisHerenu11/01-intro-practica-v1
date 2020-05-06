@@ -10,7 +10,6 @@ public class Alumno implements Matricula {
 
     List<Asignatura> asignaturasMatriculadasList = new ArrayList<>();
 
-    // LA LISTA DE ASIGNATURAS SERA USADA PARA EL PUNTO 5.
 
     public Alumno(String nombre, String apellido, String email) {
         this.setNombre(nombre);
@@ -50,9 +49,9 @@ public class Alumno implements Matricula {
     public void listadoDeAsignaturasMatriculadas(){
         int horasTotales = 0;
         for(Asignatura a: asignaturasMatriculadasList){
-            System.out.printf("%s %s %d %s","|Nombre: "+a.getNombre(),"|Hs Sem: "+a.getHorasSemanales(),"|\n");
+            System.out.printf("%s %s %s","|Nombre: "+a.getNombre(),"|Hs Sem: "+a.getHorasSemanales(),"|\n");
             horasTotales = horasTotales + a.getHorasSemanales();
         }
-        System.out.print("Horas Totales: "+horasTotales);
+        System.out.print("Horas Totales: "+horasTotales+"\n");
     }
 }

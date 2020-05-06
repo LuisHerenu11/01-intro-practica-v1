@@ -4,10 +4,6 @@ import java.util.Scanner;
 
 public class Menu2 {
 
-
-
-    // PUNTO 1 Y 2 FUNCIONA BIEN, ARREGLAR PUNTO 3 EN ADELANTE.
-
     public void desplegar(){
         System.out.print("MENU \n");
         System.out.print("1.Crear nuevo alumno \n");
@@ -48,7 +44,7 @@ public class Menu2 {
                 System.out.print("a que alumno quiere matricular: \n");
                 mostrar.alumnosList();
                 int numEnElIndiceAlumnos = lector.nextInt();
-                lector.nextLine();
+
                 Alumno alumnoAMatricular = crear.alumnosList.get(numEnElIndiceAlumnos);
                 System.out.print("en que asignatura: \n");
                 mostrar.asignaturasList();

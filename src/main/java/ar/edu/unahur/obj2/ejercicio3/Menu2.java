@@ -4,14 +4,11 @@ import java.util.Scanner;
 
 public class Menu2 {
 
-    // FALTA IMPLEMENTAR
 
 
-    // IDEA: ESTE MENU DEBE RECIBIR LOS DATOS (AL IGUAL QUE EL MENU DEL EJ 3_2) PERO como un extra,
-    // en este menu solamente se recibira datos pero no se haran los procesos, los datos seran pasados por parametro
-    // a methodos de clases encargadas de realizar dichos procesos.
+    // PUNTO 1 Y 2 FUNCIONA BIEN, ARREGLAR PUNTO 3 EN ADELANTE.
 
-    public static void desplegar(){
+    public void desplegar(){
         System.out.print("MENU \n");
         System.out.print("1.Crear nuevo alumno \n");
         System.out.print("2.Crear nueva asignatura \n");
@@ -33,22 +30,64 @@ public class Menu2 {
         System.out.print("decisión: ");
         decisión = lector.nextInt();
 
+        while(decisión != 7){
 
-        if (decisión == 1){
-            crear.instanciaAlumno();
-        }else if(decisión == 2){
-            crear.instanciaAsignatura();
-        }else if(decisión == 3){
-            System.out.print("a que alumno quiere matricular: \n");
-            mostrar.alumnosList();
-            int numEnElIndiceAlumnos = lector.nextInt();
-            lector.nextLine();
-            System.out.print("en que asignatura: \n");
-            mostrar.asignaturasList();
-            int numEnElIndiceAsignatura = lector.nextInt();
+            if (decisión == 1) {
+                crear.instanciaAlumno();
 
-        }else if(decisión ==4){
+                System.out.print("Eliga que quiere hacer ahora: \n");
+                decisión = lector.nextInt();
 
+            } else if (decisión == 2) {
+                crear.instanciaAsignatura();
+
+                System.out.print("Eliga que quiere hacer ahora: \n");
+                decisión = lector.nextInt();
+
+            } else if (decisión == 3) {
+                System.out.print("a que alumno quiere matricular: \n");
+                mostrar.alumnosList();
+                int numEnElIndiceAlumnos = lector.nextInt();
+                lector.nextLine();
+                Alumno alumnoAMatricular = crear.alumnosList.get(numEnElIndiceAlumnos);
+                System.out.print("en que asignatura: \n");
+                mostrar.asignaturasList();
+                int numEnElIndiceAsignatura = lector.nextInt();
+                Asignatura asignaturaDondeSeMatricula = crear.asignaturasList.get(numEnElIndiceAsignatura);
+                alumnoAMatricular.matricular(asignaturaDondeSeMatricula);
+                System.out.print("el alumno fue matriculado. \n");
+
+                System.out.print("Eliga que quiere hacer ahora: \n");
+                decisión = lector.nextInt();
+
+            } else if (decisión == 4) {
+                System.out.print("Listado de alumnos matriculados en una asignatura: \n");
+                mostrar.asignaturasList();
+                System.out.print("ingrese el numero de indice de la asignatura que quiere ver: \n");
+                int num = lector.nextInt();
+
+                Asignatura asignatura = crear.asignaturasList.get(num);
+                asignatura.listadoDeAlumnosMatriculados();
+
+                System.out.print("Eliga que quiere hacer ahora: \n");
+                decisión = lector.nextInt();
+
+            } else if (decisión == 5) {
+                System.out.print("Listado de asignaturas donde esta Matriculado un Alumno: \n");
+                mostrar.alumnosList();
+                System.out.print("ingrese el numero de indice de alumno que quiere ver: \n");
+                int num = lector.nextInt();
+
+                Alumno alumno = crear.alumnosList.get(num);
+                alumno.listadoDeAsignaturasMatriculadas();
+
+                System.out.print("Eliga que quiere hacer ahora: \n");
+                decisión = lector.nextInt();
+
+            } else if (decisión == 6) {
+                System.out.print("Gracias por usar este programa");
+                System.exit(0);
+            }
         }
     }
 }

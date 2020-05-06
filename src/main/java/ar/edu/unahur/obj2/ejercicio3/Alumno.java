@@ -42,9 +42,9 @@ public class Alumno implements Matricula {
         this.email = email;
     }
 
-    public void matricular(Alumno unAlumno, Asignatura unaAsignatura){
+    public void matricular(Asignatura unaAsignatura){
         asignaturasMatriculadasList.add(unaAsignatura);
-        unaAsignatura.alumnosMatriculadosList.add(unAlumno);
+        unaAsignatura.alumnosMatriculadosList.add(this);
     }
 
     public void listadoDeAsignaturasMatriculadas(){
